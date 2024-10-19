@@ -1,0 +1,117 @@
+/* Main header container */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start; /* Align items to the top to manage different heights */
+  padding: 1rem;
+  background-color: #030303; /* Change to your preferred background */
+}
+
+/* Left side of the header */
+/* Header container */
+.header {
+  display: flex; /* Use flexbox for layout */
+  justify-content: space-between; /* Space out the items */
+  align-items: center; /* Center items vertically */
+  background-color: #1a1a1a; /* Dark background color */
+  padding: 10px 20px; /* Padding for spacing */
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3); /* Subtle shadow for depth */
+}
+
+/* Content inside the header */
+.header-content {
+  display: flex; /* Flex layout for content */
+  width: 100%; /* Full width */
+}
+
+/* Logo styles */
+.logo {
+  height: 100px; /* Set height for logo */
+  margin-right: 20px; /* Spacing on the right */
+}
+
+/* Center name styles */
+.bakhi-name {
+  height: 150px; /* Set height for name image */
+  flex-grow: 1; /* Take up remaining space */
+  object-fit: contain; /* Maintain aspect ratio */
+  width: 100%; /* Prevent overflow */
+}
+
+/* Official image styles */
+.official {
+  height: 20px; /* Set height for official image */
+  margin-left: 10px; /* Spacing on the left */
+}
+
+/* Add responsive design */
+@media (max-width: 768px) {
+  .header {
+    flex-direction: column; /* Stack items on smaller screens */
+    align-items: flex-start; /* Align to start */
+  }
+
+  .header-content {
+    flex-direction: column; /* Stack images */
+    align-items: center; /* Center images */
+  }
+
+  .logo,
+  .bakhi-name,
+  .official {
+    margin: 10px 0; /* Vertical spacing between images */
+  }
+}
+
+
+
+.main-content {
+  background-color: #f9f9f9; /* Light background color for content area */
+  padding: 20px; /* Padding around the content */
+  margin: 20px auto; /* Margin for top and bottom; center horizontally */
+  border-radius: 8px; /* Rounded corners */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+  max-width: 1200px; /* Maximum width of the content */
+  text-align: center; /* Center-align text */
+}
+
+.bakhtiar {
+  max-width: 40%; /* Make sure the image doesn't overflow */
+  height: auto; /* Maintain aspect ratio */
+  border-radius: 8px; /* Optional: round the image corners */
+  margin-top: 20px; /* Space above the image */
+}
+
+.shape {
+  width: 100%; /* Ensures the image doesn't overflow the container */
+  height: auto; /* Maintains the aspect ratio of the image */
+  display: block; /* Ensures the image behaves as a block element */
+  margin: 20px auto; /* Centers the image and adds space above and below */
+  border-radius: 10px; /* Optional: rounds the corners of the shape image */
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+}
+
+
+.footer {
+  background-color: #040505; /* Dark background */
+  color: white; /* Change text color to white */
+  padding: 20px; /* Padding around the footer */
+  text-align: center; /* Center-align text */
+  position: relative; /* To position footer properly */
+  bottom: 0; /* Ensure the footer stays at the bottom */
+  width: 100%; /* Full width */
+}
+
+.footer a {
+  color: #007bff; /* Link color */
+  text-decoration: none; /* Remove underline */
+}
+
+.footer a:hover {
+  text-decoration: underline; /* Underline on hover */
+}
+
+/* Optional: Add styles specifically for copyright text */
+.footer p {
+  margin: 5px 0; /* Space between paragraphs */
+}
