@@ -42,5 +42,5 @@ To get started with the project, clone the repository and install the necessary 
 
 ```bash
 git clone https://github.com/Bakhtiar-23/Artist-Showcase-Website-G3-.git
-cd artist-showcase
+cd Artist-Showcase-Website-G3-
 npm install
