@@ -4,7 +4,7 @@ const Footer = () => {
   return (
     <footer id="contact-artist" className="footer">
       <button onClick={() => window.location.href = "mailto:bakhtiar.khider@gmail.com"} className="order-button">
-        Order and Buy Paintings
+        Order Paintings
       </button>
       <p>&copy; {new Date().getFullYear()} Bakhtiar Ismail. All rights reserved.</p>
       <p>
