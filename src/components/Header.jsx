@@ -1,21 +1,20 @@
-// src/components/Header.jsx
 import React from 'react';
 
-const Header = () => {
+const Footer = () => {
   return (
-    <header className="header">
-      <div className="header-content">
-        {/* Logo on the left */}
-        <img src="/public/assets/logo.png" alt="Logo" className="logo" />
-
-        {/* Your name as an image in the middle */}
-        <img src="/public/assets/Bakhi-name.png" alt="Bakhi-name" className="bakhi-name" />
-
-        {/* Official web page in the bottom right */}
-        <img src="/public/assets/official.png" alt="Official" className="official" />
-      </div>
-    </header>
+    <footer id="contact-artist" className="footer">
+      <button onClick={() => window.location.href = "mailto:bakhtiar.khider@gmail.com"} className="order-button">
+        Order Paintings
+      </button>
+      <p>&copy; {new Date().getFullYear()} All rights reserved.</p>
+      <p>
+        <h3>example@gmail.com</h3>
+      </p>
+      <p>
+        <h3>Number: 0123456789</h3>
+      </p>
+    </footer>
   );
 };
 
-export default Header;
+export default Footer;

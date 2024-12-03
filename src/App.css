@@ -1,17 +1,281 @@
+/* General Styles */
+body {
+  margin: 0;
+  font-family: 'Helvetica Neue', Arial, sans-serif;
+  background: url('/public/assets/nature.jpg') no-repeat center center fixed; /* Set nature image as background */
+  background-size: cover; /* Ensure the image covers the whole background */
+  color: #ffffff; /* Change text color to white to contrast with the darkened background */
+  line-height: 1.6;
+  height: 100vh; /* Ensure it takes up the whole viewport */
+}
+
+body::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.2); /* Darkened overlay */
+  z-index: -1; /* Place the overlay behind the content */
+}
+
+
+/* Header Styles */
+header {
+  background-color: #2C3E50; /* Dark header background */
+  color: white;
+  padding: 20px;
+  text-align: center;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+}
+
+header .header-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+header .logo {
+  max-width: 100px;
+  height: auto;
+}
+
+header .gallery-button-container {
+  text-align: right;
+}
+
+header .gallery-button {
+  padding: 12px 24px;
+  background-color: #3498DB; /* Professional blue for buttons */
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+header .gallery-button:hover {
+  background-color: #2980B9; /* Slightly darker blue on hover */
+}
+
+header .gallery-button:active {
+  background-color: #1A5276; /* Even darker blue on click */
+  transform: scale(0.98); /* Slight shrink on click for effect */
+}
+
+header .gallery-button:focus {
+  outline: 2px solid #2980B9; /* Highlight focus state for accessibility */
+}
+
+/* Main Content */
+.main-content {
+  background-color: #ffffff; /* Clean white background */
+  padding: 20px;
+  margin: 20px auto;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
+  max-width: 1200px;
+  text-align: center;
+}
+
+/* Image styles */
+.face {
+  width: 100%; 
+  max-width: 500px; 
+  height: auto; 
+  display: block; 
+  margin: 20px auto; 
+  border-radius: 50%; 
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); 
+}
+
+.shape {
+  width: 100%;
+  height: auto;
+  display: block;
+  margin: 20px auto;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Footer Styles */
 .footer {
-  background-color: #f8f9fa; /* Light gray background */
-  padding: 20px; /* Padding around the footer */
-  text-align: center; /* Center-align text */
-  position: relative; /* To position footer properly */
-  bottom: 0; /* Ensure the footer stays at the bottom */
-  width: 100%; /* Full width */
+  background-color: #34495E; /* Dark footer background */
+  color: white;
+  padding: 20px;
+  text-align: center;
+  width: 100%;
 }
 
 .footer a {
-  color: #007bff; /* Link color */
-  text-decoration: none; /* Remove underline */
+  color: #3498DB; /* Blue links */
+  text-decoration: none;
 }
 
 .footer a:hover {
-  text-decoration: underline; /* Underline on hover */
+  text-decoration: underline;
+}
+
+.footer p {
+  margin: 5px 0;
+  font-size: 14px; /* Slightly smaller text for footer */
+}
+
+/* Primary Button (Reusable) */
+.order-button {
+  background-color: #3498DB; 
+  color: white;
+  padding: 12px 24px;
+  font-size: 16px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.order-button:hover {
+  background-color: #3498DB; 
+}
+
+.order-button:active {
+  background-color: #145A32; /* Even darker green on click */
+  transform: scale(0.98);
+}
+
+.order-button:focus {
+  outline: 2px solid #27AE60;
+}
+
+/* Text Styling for Headings */
+h1, h2, h3 {
+  font-weight: 600;
+  color: #d1cfcf; /* Dark color for headings */
+  margin: 20px 0;
+}
+
+h1 {
+  font-size: 2.5rem;
+}
+
+h2 {
+  font-size: 2rem;
+}
+
+h3 {
+  font-size: 1.5rem;
+}
+
+/* Paragraphs and Text */
+p {
+  font-size: 1rem;
+  color: #dcdddf; /* Slightly lighter dark text for paragraphs */
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  margin-bottom: 15px;
+  line-height: 1.8; /* Improved line spacing for easier reading */
+}
+
+a {
+  color: #b0bfc9;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* Gallery Container */
+.gallery-container {
+  padding: 20px;
+  background-color: transparent; /* Light background */
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Soft shadow */
+  text-align: center;
+}
+
+/* Gallery Grid */
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Responsive grid */
+  gap: 20px;
+  padding: 20px;
+}
+
+/* Gallery Item */
+.gallery-item {
+  position: relative;
+  overflow: hidden;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  transition: box-shadow 0.3s ease; /* Smooth transition for shadow */
+}
+
+/* Ensure Images are the Same Size */
+.gallery-item img {
+  width: 100%;
+  height: 200px; /* Fixed height for uniformity */
+  object-fit: cover; /* Ensure all images cover the area without distortion */
+  display: block;
+  transition: transform 0.3s ease; /* Smooth zoom-in effect */
+}
+
+/* Hover Effect for Image */
+.gallery-item:hover img {
+  transform: scale(1.05); /* Slight zoom effect */
+}
+
+/* Item Info (Description) */
+.item-info {
+  position: absolute;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.7); /* Semi-transparent black background */
+  color: white; /* White text color */
+  width: 100%;
+  padding: 10px;
+  text-align: center;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+/* Hover Effect for Item Info */
+.gallery-item:hover .item-info {
+  opacity: 1; /* Show description on hover */
+}
+
+/* Force White Text on Hover */
+.gallery-item:hover .item-info,
+.gallery-item .item-info a {
+  color: white !important; /* Ensure text stays white */
+}
+
+/* Button Container for Gallery Page */
+.gallery-button-container {
+  text-align: right;
+  padding: 10px 0;
+}
+
+/* Gallery Page Button */
+.gallery-page-button {
+  padding: 12px 24px;
+  background-color: #3498DB; /* Consistent blue button */
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.gallery-page-button:hover {
+  background-color: #2980B9; /* Slightly darker blue on hover */
+}
+
+.gallery-page-button:active {
+  background-color: #1A5276; /* Darker blue on click */
+  transform: scale(0.98); /* Slight shrink on click */
+}
+
+.gallery-page-button:focus {
+  outline: 2px solid #2980B9; /* Focus outline for accessibility */
 }

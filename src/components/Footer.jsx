@@ -2,15 +2,17 @@ import React from 'react';
 
 const Footer = () => {
   return (
-    <footer className="footer">
-      <p>&copy; {new Date().getFullYear()} Bakhtiar Ismail. All rights reserved.</p>
+    <footer id="contact-artist" className="footer">
+      <button onClick={() => window.location.href = "mailto:bakhtiar.khider@gmail.com"} className="order-button">
+        Order Paintings
+      </button>
+      <p>&copy; {new Date().getFullYear()} All rights reserved.</p>
       <p>
-        Email: <a href="mailto:bakhtiar.khider@gmail.com">bakhtiar.khider@gmail.com</a>
+        <h3>example@gmail.com</h3>
       </p>
       <p>
-        Phone: <a href="tel:0409326961">0409326961</a>
+        <h3>Number: 0123456789</h3>
       </p>
-      {/* Add any additional footer links or information */}
     </footer>
   );
 };
