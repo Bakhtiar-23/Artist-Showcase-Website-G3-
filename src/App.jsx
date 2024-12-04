@@ -4,7 +4,7 @@ import { BrowserRouter as Router, Route, Routes, Link } from 'react-router-dom';
 import Header from './components/Header';
 import MainContent from './components/MainContent';
 import Footer from './components/Footer';
-import Gallery from './components/Gallery';
+import Gallary from './components/Gallary';
 import ContactArtist from './components/ContactArtist';
 import { CartProvider } from './contexts/CartContext';
 import Cart from './components/Cart';
@@ -24,7 +24,7 @@ const App = () => {
                 <Link to="/">Home</Link>
               </li>
               <li>
-                <Link to="/gallary">Gallery</Link>
+                <Link to="/gallary">Gallary</Link>
               </li>
               <li>
                 <Link to="/contact-artist">Contact the Artist</Link>
