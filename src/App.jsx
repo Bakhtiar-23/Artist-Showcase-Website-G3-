@@ -4,7 +4,7 @@ import { BrowserRouter as Router, Route, Routes, Link } from 'react-router-dom';
 import Header from './components/Header';
 import MainContent from './components/MainContent';
 import Footer from './components/Footer';
-import Gallary from './components/Gallery';
+import Gallery from './components/Gallery';
 import ContactArtist from './components/ContactArtist';
 import { CartProvider } from './contexts/CartContext';
 import Cart from './components/Cart';
