@@ -3,11 +3,11 @@ import React from 'react';
 import { BrowserRouter as Router, Route, Routes, Link } from 'react-router-dom';
 import Header from './components/Header';
 import MainContent from './components/MainContent';
-import Footer from './components/Footer';
 import Gallery from './components/Gallery';
 import ContactArtist from './components/ContactArtist';
 import { CartProvider } from './contexts/CartContext';
 import Cart from './components/Cart';
+import Footer from './components/Footer';
 import './index.css';
 
 const App = () => {
