@@ -15,6 +15,10 @@ const Header = () => {
     }
   };
 
+  const handleBuyRedirect = () => {
+    navigate('/buy'); // Navigate to the Buy page
+  };
+
   return (
     <header className="header">
       <div className="header-content">

@@ -11,7 +11,7 @@ const Footer = () => {
         <h3>example@gmail.com</h3>
       </p>
       <p>
-        <h3>Number: 0123456789</h3>
+        <h3>Number: 0123456700</h3>
       </p>
     </footer>
   );
