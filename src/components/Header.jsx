@@ -1,38 +1,26 @@
+// src/components/Header.jsx
 import React from 'react';
-import { useNavigate, useLocation, Link } from 'react-router-dom'; // Consolidated imports
-import { useCart } from '../contexts/CartContext';
-import '../App.css'; // Ensure your styles are applied correctly
+import { Link } from 'react-router-dom';
+import { useCart } from '../contexts/CartContext'; // Import the CartContext to access cart items
 
 const Header = () => {
-  const navigate = useNavigate();
-  const location = useLocation(); // Get the current location
-  const { cart } = useCart(); // Assuming 'cart' is the correct property from CartContext
-
-  // Handle redirection based on the current page
-  const handleRedirect = () => {
-    navigate(location.pathname === '/gallery' ? '/' : '/gallery'); // Ternary for clarity
-  };
+  const { cartItems } = useCart(); // Get the cart items from the CartContext
 
   return (
     <header className="header">
       <div className="header-content">
         {/* Logo on the left */}
-        <div className="logo-container">
-          <img src="/assets/logo.png" alt="Logo" className="logo" />
-        </div>
+        <img src="/assets/logo.png" alt="Logo" className="logo" />
 
-        {/* Button to redirect to either Gallery or Home */}
-        <div className="navigation-container">
-          <button onClick={handleRedirect} className="navigation-button">
-            {location.pathname === '/gallery' ? 'Go to Home' : 'Go to Gallery'}
-          </button>
-        </div>
+        {/* Your name as an image in the middle */}
+        <img src="/assets/Bakhi-name.png" alt="Bakhi-name" className="bakhi-name" />
 
-        {/* Cart container */}
+        {/* Shopping Cart Icon */}
         <div className="cart-container">
-          <Link to="/cart" className="cart-link">
+          {/* Link to the Cart page, with the number of items in the cart */}
+          <Link to="/cart">
             <span className="cart-icon">🛒</span>
-            <span className="cart-count">{cart?.length || 0}</span> {/* Safeguard for undefined cart */}
+            <span className="cart-count">{cartItems.length}</span> {/* Display the number of items */}
           </Link>
         </div>
       </div>

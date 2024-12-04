@@ -2,117 +2,366 @@
 .header {
   display: flex;
   justify-content: space-between;
-  align-items: flex-start;
+  align-items: flex-start; /* Align items to the top to manage different heights */
   padding: 1rem;
-  background-color: #2C3E50; 
+  background-color: #030303; /* Change to your preferred background */
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3); /* Subtle shadow for depth */
 }
 
-/* Header content and alignment */
+/* Content inside the header */
 .header-content {
-  display: flex;
-  width: 100%;
+  display: flex; /* Flex layout for content */
+  width: 100%; /* Full width */
 }
 
+/* Logo styles */
 .logo {
-  height: 80px; /* Logo with a more modest height */
-  margin-right: 20px;
+  height: 100px; /* Set height for logo */
+  margin-right: 20px; /* Spacing on the right */
 }
 
-.official {
-  height: 40px;
-  margin-left: 30px;
+/* Center name styles */
+.bakhi-name {
+  height: 150px; /* Set height for name image */
+  flex-grow: 1; /* Take up remaining space */
+  object-fit: contain; /* Maintain aspect ratio */
+  width: 100%; /* Prevent overflow */
 }
 
-/* Responsive design */
+/* Add responsive design */
 @media (max-width: 768px) {
   .header {
-    flex-direction: column;
-    align-items: flex-start;
+    flex-direction: column; /* Stack items on smaller screens */
+    align-items: flex-start; /* Align to start */
   }
 
   .header-content {
-    flex-direction: column;
-    align-items: center;
+    flex-direction: column; /* Stack images */
+    align-items: center; /* Center images */
   }
 
   .logo,
   .bakhi-name,
   .official {
-    margin: 10px 0;
+    margin: 10px 0; /* Vertical spacing between images */
   }
 }
 
-/* Main content styling */
-.main-content {
-  background-color: transparent; 
+/* Cart Styles */
+.cart-container {
   padding: 20px;
-  margin: 20px auto;
-  border-radius: 8px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-  max-width: 1200px;
-  text-align: center;
+  background-color: #d3d921; /* Background for the entire container */
+  font-family: Arial, sans-serif;
+  display: flex;
+  flex-direction: column; /* Stack the items vertically */
+  align-items: flex-start; /* Align items to the left */
+  border-radius: 8px; /* Optional: to round the corners of the container */
+}
+/* h1 styles */
+.cart-container h1 {
+  margin-bottom: 15px; /* Adds space below the h1 */
+  font-size: 2rem; /* Customize font size */
+  color: #333; /* Change color if needed */
+  text-align: left; /* Align the title to the left */
 }
 
-/* Art image styling */
-.bakhtiar {
-  max-width: 40%;
-  height: auto;
-  border-radius: 8px;
+/* p styles */
+.cart-container p {
+  margin-top: 10px; /* Adds space above the p */
+  font-size: 1.2rem; /* Customize font size */
+  color: #555; /* Change color for the text */
+  text-align: left; /* Align the paragraph text to the left */
+}
+
+.cart-link {
+  display: flex;
+  align-items: center;
+  text-decoration: none; /* Remove underline */
+  color: white;
+  font-weight: bold;
+}
+
+.cart-text {
+  margin-right: 8px;
+}
+
+.cart-icon {
+  font-size: 24px;
+  margin-right: 5px;
+}
+
+.cart-count {
+  background-color: #f44336; /* Red color for cart count */
+  color: white;
+  padding: 2px 8px;
+  border-radius: 50%;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+/* Cart table styles */
+.cart-table {
+  width: 100%;
+  border-collapse: collapse;
   margin-top: 20px;
 }
 
-.shape {
-  width: 100%;
-  height: auto;
-  display: block;
-  margin: 20px auto;
-  border-radius: 10px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+.cart-table th, .cart-table td {
+  padding: 10px;
+  text-align: left;
+  border-bottom: 1px solid #482ce8;
 }
 
-/* Footer styling */
-.footer {
-  background-color: #34495E; /* Dark blue-gray for footer */
+.cart-table th {
+  background-color: #28a745;
   color: white;
-  padding: 20px;
-  text-align: center;
-  bottom: 0;
-  width: 100%;
 }
 
-.footer a {
-  color: #F39C12; /* Bright gold color for links to grab attention */
-  text-decoration: none;
-}
-
-.footer a:hover {
-  color: #E67E22; /* Slightly darker gold on hover */
-  text-decoration: underline;
+.cart-table td {
+  color: #555;
 }
 
 /* Button styles */
-.order-button {
-  background-color: #3498DB; 
-  color: white;
-  padding: 10px 20px;
-  font-size: 16px;
+button {
+  padding: 6px 12px;
   border: none;
+  background-color: #f44336;
+  color: white;
   border-radius: 5px;
   cursor: pointer;
-  transition: background-color 0.3s ease;
+  transition: background-color 0.3s;
 }
 
-.order-button:hover {
-  background-color: #56a6db; 
+button:hover {
+  background-color: #d32f2f;
 }
 
-.order-button:active {
-  background-color: #2416a0; 
-  transform: scale(0.98);
+/* Total price section */
+.total-price {
+  text-align: right;
+  font-size: 1.2rem;
+  margin-top: 20px;
 }
 
-/* Footer links hover effect */
+/* Payment methods */
+.payment-methods {
+  margin-top: 20px;
+  text-align: center;
+}
+
+select {
+  padding: 8px 12px;
+  font-size: 1rem;
+  margin-top: 5px;
+}
+
+/* Proceed button section */
+.proceed-button {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.proceed-button button {
+  background-color: #28a745;
+}
+
+.proceed-button button:hover {
+  background-color: #884321;
+}
+
+/* Main content styles */
+.main-content {
+  background-color: #f9f9f9; /* Light background color for content area */
+  padding: 20px; /* Padding around the content */
+  margin: 20px auto; /* Margin for top and bottom; center horizontally */
+  border-radius: 8px; /* Rounded corners */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+  max-width: 1200px; /* Maximum width of the content */
+  text-align: center; /* Center-align text */
+}
+
+/* Bakhtiar image styling */
+.bakhtiar {
+  max-width: 40%; /* Make sure the image doesn't overflow */
+  height: auto; /* Maintain aspect ratio */
+  border-radius: 8px; /* Optional: round the image corners */
+  margin-top: 20px; /* Space above the image */
+  margin-bottom: 2cm; /* 2 cm space below the bakhtiar image */
+}
+
+/* Gallery styles */
+.painting-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+  margin-top: 30px;
+}
+
+.painting-container img {
+  width: 250px;
+  height: 250px;
+  object-fit: cover; /* Ensures the image fits within the given space */
+  border-radius: 8px; /* Round the corners of the images */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+  transition: transform 0.3s ease; /* Add smooth hover effect */
+}
+
+.painting-container img:hover {
+  transform: scale(1.05); /* Zoom effect on hover */
+}
+
+/* Shape image styles */
+.shape {
+  margin-top: 40px;
+  max-width: 100%;
+  height: auto;
+}
+
+/* h1 styles */
+.main-content h1 {
+  font-size: 2.5rem;
+  color: #333;
+  margin-bottom: 20px;
+  font-weight: bold;
+}
+
+.main-content p {
+  font-size: 1.2rem;
+  color: #555;
+  margin-bottom: 40px;
+}
+
+
+/* Gallery styles */
+.gallery-container {
+  padding: 20px;
+}
+
+.paintings-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 20px;
+}
+
+.painting-card {
+  border: 1px solid #ccc;
+  padding: 15px;
+  border-radius: 10px;
+  background-color: #f9f9f9;
+  text-align: center;
+}
+
+.painting-card h2 {
+  font-size: 1.5em;
+  margin-bottom: 10px;
+}
+
+.painting-card p {
+  margin: 5px 0;
+}
+
+.painting-image {
+  width: 70%;
+  height: auto;
+  border-radius: 8px;
+  max-height: 300px; /* Adjust max height for uniformity */
+  object-fit: cover; /* Keeps aspect ratio intact */
+  margin-bottom: 15px;
+}
+
+.painting-card button {
+  background-color: #4CAF50;
+  color: white;
+  padding: 10px;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.painting-card button:hover {
+  background-color: #45a049;
+}
+
+/* Selected painting section */
+.selected-painting {
+  margin-top: 30px;
+  background-color: #e0f7fa;
+  padding: 15px;
+  border-radius: 5px;
+  border: 1px solid #00bcd4;
+}
+
+.selected-painting h2 {
+  font-size: 1.5em;
+}
+
+.selected-painting p {
+  font-size: 1.1em;
+}
+
+.star-rating {
+  color: gold;
+}
+
+/* Footer styles */
+.footer {
+  background-color: #040505; /* Dark background */
+  color: white; /* Change text color to white */
+  padding: 20px; /* Padding around the footer */
+  text-align: center; /* Center-align text */
+  position: relative; /* To position footer properly */
+  bottom: 0; /* Ensure the footer stays at the bottom */
+  width: 100%; /* Full width */
+}
+
+.footer a {
+  color: #007bff; /* Link color */
+  text-decoration: none; /* Remove underline */
+}
+
 .footer a:hover {
-  color: #E67E22; /* Darker gold on hover */
-  text-decoration: underline;
+  text-decoration: underline; /* Underline on hover */
+}
+
+/* Optional: Add styles specifically for copyright text */
+.footer p {
+  margin: 5px 0; /* Space between paragraphs */
+}
+
+.contact-artist {
+  padding: 20px;
+}
+
+.form-container {
+  display: flex;
+  flex-direction: column;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.form-group {
+  margin-bottom: 15px;
+}
+
+label {
+  font-weight: bold;
+}
+
+input,
+textarea {
+  width: 100%;
+  padding: 8px;
+  margin-top: 5px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+textarea {
+  resize: vertical;
+}
+
+button:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
 }
