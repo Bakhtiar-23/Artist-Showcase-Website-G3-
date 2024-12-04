@@ -1,20 +1,17 @@
 import React from 'react';
-import { useNavigate, useLocation } from 'react-router-dom';
+import { useNavigate, useLocation, Link } from 'react-router-dom'; // Consolidated imports
+import { useCart } from '../contexts/CartContext';
 import '../App.css'; // Ensure your styles are applied correctly
 
 const Header = () => {
   const navigate = useNavigate();
   const location = useLocation(); // Get the current location
+  const { cart } = useCart(); // Assuming 'cart' is the correct property from CartContext
 
   // Handle redirection based on the current page
   const handleRedirect = () => {
-    if (location.pathname === '/gallery') {
-      navigate('/'); // Go to Home if currently on Gallery page
-    } else {
-      navigate('/gallery'); // Go to Gallery if currently on Home page
-    }
+    navigate(location.pathname === '/gallery' ? '/' : '/gallery'); // Ternary for clarity
   };
-
 
   return (
     <header className="header">
@@ -25,10 +22,18 @@ const Header = () => {
         </div>
 
         {/* Button to redirect to either Gallery or Home */}
-        <div className="gallery-button-container">
-          <button onClick={handleRedirect} className="gallery-button">
+        <div className="navigation-container">
+          <button onClick={handleRedirect} className="navigation-button">
             {location.pathname === '/gallery' ? 'Go to Home' : 'Go to Gallery'}
           </button>
+        </div>
+
+        {/* Cart container */}
+        <div className="cart-container">
+          <Link to="/cart" className="cart-link">
+            <span className="cart-icon">🛒</span>
+            <span className="cart-count">{cart?.length || 0}</span> {/* Safeguard for undefined cart */}
+          </Link>
         </div>
       </div>
     </header>

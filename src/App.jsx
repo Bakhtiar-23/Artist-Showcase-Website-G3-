@@ -1,26 +1,49 @@
+// src/App.jsx
 import React from 'react';
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Routes, Link } from 'react-router-dom';
 import Header from './components/Header';
 import MainContent from './components/MainContent';
 import Footer from './components/Footer';
-import Gallery from './components/Gallery';
+import Gallary from './components/Gallary';
+import ContactArtist from './components/ContactArtist';
+import { CartProvider } from './contexts/CartContext';
+import Cart from './components/Cart';
 import './index.css';
-import './App.css';
-
 
 const App = () => {
   return (
-    <Router>
-      <div className="app">
-        <Header />
-        <Routes>
-          {/* Define routes for your pages */}
-          <Route path="/" element={<MainContent />} />
-          <Route path="/gallery" element={<Gallery />} />
-        </Routes>
-        <Footer />
-      </div>
-    </Router>
+    <CartProvider>
+      <Router>
+        <div className="app">
+          <Header />
+
+          {/* Navigation Links */}
+          <nav>
+            <ul className="nav-links">
+              <li>
+                <Link to="/">Home</Link>
+              </li>
+              <li>
+                <Link to="/gallary">Gallary</Link>
+              </li>
+              <li>
+                <Link to="/contact-artist">Contact the Artist</Link>
+              </li>
+            </ul>
+          </nav>
+
+          {/* Main Content for different pages */}
+          <Routes>
+            <Route path="/" element={<MainContent />} />
+            <Route path="/gallary" element={<Gallary />} />
+            <Route path="/contact-artist" element={<ContactArtist />} />
+            <Route path="/cart" element={<Cart />} />
+          </Routes>
+
+          <Footer />
+        </div>
+      </Router>
+    </CartProvider>
   );
 };
 

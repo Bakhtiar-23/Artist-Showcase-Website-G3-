@@ -1,25 +1,60 @@
-import React from 'react';
-import '../App.css'; // Import common styles
+// src/components/Gallery.jsx
+import React, { useState } from 'react';
+import { useCart } from '../contexts/CartContext';
 
-
-const galleryItems = [
-  { id: 1, src: '/assets/abstract-nature-painted-with-watercolor-autumn-leaves-backdrop-generated-by-ai_188544-9806.avif', size: '24x36 cm', price: '€50' },
-  { id: 2, src: '/assets/nail-polish-texture-macro_23-2148110962.avif', size: '30x40 cm', price: '€70' },
-  { id: 3, src: '/assets/watercolor-floral-set_1340-4780.avif', size: '50x45 cm', price: '€100' },
+const paintings = [
+  {
+    id: 1,
+    name: "Sunset Over the Ocean",
+    size: "30x50 cm",
+    price: "$500",
+    category: "Landscape",
+    style: "Impressionism",
+    rating: 4,
+    image: "/assets/painting5.jpg",
+  },
+  {
+    id: 2,
+    name: "Morning Tea at the Hotel Garden",
+    size: "50x30 cm",
+    price: "$750",
+    category: "Impressionism",
+    style: "Modern",
+    rating: 5,
+    image: "/assets/painting3.jpg",
+  },
+  {
+    id: 3,
+    name: "Old Church in Ussikaupunki-Finland",
+    size: "50x30 cm",
+    price: "$300",
+    category: "Nature",
+    style: "Realism",
+    rating: 3,
+    image: "/assets/painting2.jpg",
+  },
 ];
 
 const Gallery = () => {
+  const { addToCart } = useCart();
+
+  const handleBuyClick = (painting) => {
+    addToCart(painting); // Add the painting to the cart
+  };
+
   return (
     <div className="gallery-container">
-      <h1>Artist Gallery</h1>
-      <div className="gallery">
-        {galleryItems.map((item) => (
-          <div key={item.id} className="gallery-item">
-            <img src={item.src} alt={`Artwork ${item.id}`} />
-            <div className="item-info">
-              <p>Size: {item.size}</p>
-              <p>Price: {item.price}</p>
-            </div>
+      <h1>Gallery</h1>
+      <div className="paintings-list">
+        {paintings.map((painting) => (
+          <div key={painting.id} className="painting-card">
+            <img src={painting.image} alt={painting.name} className="painting-image" />
+            <h2>{painting.name}</h2>
+            <p><strong>Size:</strong> {painting.size}</p>
+            <p><strong>Price:</strong> {painting.price}</p>
+            <p><strong>Category:</strong> {painting.category}</p>
+            <p><strong>Style:</strong> {painting.style}</p>
+            <button className="buy-button" onClick={() => handleBuyClick(painting)}>Buy</button>
           </div>
         ))}
       </div>

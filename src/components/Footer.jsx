@@ -1,18 +1,26 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom'; // Import useNavigate from React Router
 
 const Footer = () => {
+  const navigate = useNavigate(); // Initialize the useNavigate hook
+
+  const handleButtonClick = () => {
+    navigate('/contact-artist'); // Navigate to the "Contact Artist" page
+  };
+
   return (
-    <footer id="contact-artist" className="footer">
-      <button onClick={() => window.location.href = "mailto:bakhtiar.khider@gmail.com"} className="order-button">
+    <footer className="footer">
+      <button onClick={handleButtonClick} className="order-paintings">
         Order Paintings
       </button>
-      <p>&copy; {new Date().getFullYear()} All rights reserved.</p>
+      <p>&copy; {new Date().getFullYear()} Bakhtiar Ismail. All rights reserved.</p>
       <p>
-        <h3>example@gmail.com</h3>
+        Email: <a href="mailto:bakhtiar.khider@gmail.com">bakhtiar.khider@gmail.com</a>
       </p>
       <p>
-        <h3>Number: 0123456700</h3>
+        Phone: <a href="tel:0409326961">0409326961</a>
       </p>
+      
     </footer>
   );
 };
