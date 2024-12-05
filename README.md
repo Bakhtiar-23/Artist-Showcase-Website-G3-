@@ -9,20 +9,22 @@ The Header will serve as the navigation and branding area of the application. Ke
 
 - **Logo**: Positioned on the left side, it will represent the artist’s brand.
 - **Artist Name**: Displayed prominently in the center to create a personal touch.
-- **Official Website**: A link or image on the right side to direct users to official pages or social media.
+- **Menu List**: Contents list of Views of the website like " Home, Gallery, and Contact Us".
+- **Bag Cart**: An icon from there, users can buy painting items after selecting, and clicking by 'Buy' button from the Home and Gallery pages. 
 
 ### 2. Main Content
 
 The Main Content area will be the focal point of the showcase, featuring:
 
-- **Welcome Message**: A brief introduction to the artist and their work.
-- **Artwork Display**: Images of artworks, possibly with descriptions or titles.
-- **Achievements**: Highlights of the artist’s accomplishments or exhibitions.
+- **Welcome Message**: A brief introduction to the artist, their works, and about him.
+- **Artwork Display**: Images of artworks, possibly with 'Name, Size, Price, Style, Category, and Rate' and also the Button 'Buy' to buy items.
+- **Feedback Section**: From this section, users can leave feedback about artworks.
 
 ### 3. Footer
 
 The Footer will provide essential information, including:
 
+- **COrder Paintings Button**: From this button user can Order a new painting by contacting the Artist on a new page Contact Us.
 - **Copyright Information**: Clear statement of copyright ownership.
 - **Contact Information**: Email and phone number for inquiries or commissions.
 - **Social Media Links**: Icons linking to the artist’s social media profiles.
@@ -44,3 +46,4 @@ To get started with the project, clone the repository and install the necessary 
 git clone https://github.com/Bakhtiar-23/Artist-Showcase-Website-G3-.git
 cd Artist-Showcase-Website-G3-
 npm install
+
