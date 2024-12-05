@@ -1,82 +1,532 @@
-/* Main header container */
-.header {
+/* General Flexbox Layout for Sections */
+/* Universal Reset */
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%; /* Full height for consistent layout */
+  display: flex;
+  flex-direction: column; /* Column-based layout for header, content, and footer */
+}
+
+/* Flex Container Utility */
+.flex-container {
   display: flex;
   justify-content: space-between;
   align-items: flex-start; /* Align items to the top to manage different heights */
-  padding: 1rem;
-  background-color: #030303; /* Change to your preferred background */
+}
+
+.flex-column {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.text-center {
+  text-align: center;
+}
+
+/* Header Styling */
+.header {
+  background-color: #030303; /* Unified dark background */
+  color: white;
+  height: 3cm;
+  padding: 20px;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3); /* Subtle shadow for depth */
+  position: relative; /* For child element positioning */
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
-/* Content inside the header */
-.header-content {
-  display: flex; /* Flex layout for content */
-  width: 100%; /* Full width */
+/* Footer Styling */
+.footer {
+  background-color: #030303; /* Same dark background as header */
+  color: white;
+  height: 3cm;
+  padding: 20px;
+  box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.3); /* Shadow to match the header */
+  position: relative;
+  text-align: center;
+  flex-shrink: 0; /* Prevents footer from shrinking */
 }
 
-/* Logo styles */
-.logo {
-  height: 100px; /* Set height for logo */
-  margin-right: 20px; /* Spacing on the right */
+/* Header and Footer Content */
+.header-content, .footer-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
 }
 
-/* Center name styles */
-.bakhi-name {
-  height: 150px; /* Set height for name image */
-  flex-grow: 1; /* Take up remaining space */
-  object-fit: contain; /* Maintain aspect ratio */
-  width: 100%; /* Prevent overflow */
+/* Main Content Area */
+.main-content {
+  flex-grow: 1; /* Pushes footer to the bottom when content is short */
+  padding: 20px;
 }
 
-/* Add responsive design */
+/* Responsive Adjustments */
 @media (max-width: 768px) {
-  .header {
-    flex-direction: column; /* Stack items on smaller screens */
-    align-items: flex-start; /* Align to start */
+  .header-content, .footer-content {
+    flex-direction: column;
+    align-items: center;
   }
-
-  .header-content {
-    flex-direction: column; /* Stack images */
-    align-items: center; /* Center images */
-  }
-
-  .logo,
-  .bakhi-name,
-  .official {
-    margin: 10px 0; /* Vertical spacing between images */
+  .header, .footer {
+    text-align: center;
   }
 }
 
-/* Cart Styles */
+
+/* Logo and Name Styling */
+.bakhi-name {
+  height: 100px;
+  margin-right: 20px;
+}
+
+.logo {
+  height: 50px;
+  margin-right: 20px;
+}
+
+.bakhi-name {
+  flex-grow: 1;
+  object-fit: contain;
+  width: 100%;
+}
+
+/* Navigation Menu */
+nav {
+  width: 100%;
+  position: absolute; /* Keep the menu inside the header */
+  bottom: 0; /* Position menu dynamically 1cm from the bottom of the header */
+  left: 0; /* Align with the left edge */
+  z-index: 10; /* Ensure menu stays above other content */
+}
+
+/* Navigation Links Container */
+.nav-links-container {
+  display: flex;
+  justify-content: center; /* Center links horizontally */
+  align-items: center;
+  width: 100%;
+  flex-wrap: wrap; /* Allow wrapping on smaller screens */
+  padding: 0;
+  margin: 0;
+}
+
+/* Navigation Links */
+.nav-links {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  flex-wrap: wrap; /* Wrap links for smaller screens */
+}
+
+.nav-link {
+  color: white;
+  text-decoration: none;
+  font-size: 1.2rem;
+  padding: 10px 20px;
+  transition: background-color 0.3s ease;
+}
+
+.nav-link:hover {
+  background-color: #d3d921; /* Highlight on hover */
+  border-radius: 5px;
+}
+
+.nav-link i {
+  margin-right: 8px;
+}
+
+/* Shopping Cart Icon */
+.cart-container {
+  position: relative;
+}
+
+.cart-icon {
+  height: 10px;
+}
+
+.cart-count {
+  position: absolute;
+  top: -5px;
+  right: -10px;
+  background-color: red;
+  color: white;
+  font-size: 0.8rem;
+  padding: 2px 5px;
+  border-radius: 50%;
+}
+
+/* Mobile Menu (Hamburger) */
+@media (max-width: 768px) {
+  .menu-icon {
+    display: block; /* Display hamburger icon on small screens */
+    font-size: 30px;
+    color: white;
+    cursor: pointer;
+    padding: 10px;
+  }
+
+  .nav-links-container {
+    display: none; /* Hide menu by default on mobile */
+    flex-direction: column; /* Stack links vertically */
+    padding: 10px 0;
+    background-color: #333; /* Match header style */
+  }
+
+  .nav-links-container.open {
+    display: flex; /* Show menu when open */
+  }
+
+  .nav-link {
+    padding: 15px;
+    font-size: 1.5rem; /* Increase size for better touch usability */
+    text-align: center;
+  }
+
+  .header {
+    flex-direction: column; /* Stack header elements on small screens */
+    align-items: center;
+  }
+
+  .header-content, .footer-content {
+    flex-direction: column;
+  }
+
+  
+}
+
+/* Desktop Menu Styling */
+@media (min-width: 769px) {
+  .menu-icon {
+    display: none; /* Hide hamburger icon on larger screens */
+  }
+
+  .nav-links-container {
+    display: flex; /* Always display menu on desktop */
+    justify-content: center;
+  }
+
+  .nav-link {
+    padding: 15px 20px;
+    font-size: 1.2rem;
+  }
+}
+
+/* Main Content and Gallery */
+.main-content {
+  background-color: #f9f9f9;
+  background-image: url('/assets/background1.jpg');
+  padding: 20px;
+  margin: 20px auto;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  max-width: 1200px;
+  text-align: center;
+}
+
+/* Gallery Styles */
+.painting-container, .gallery-container {
+  background: url("/assets/nature.jpg") no-repeat center center; /* Center and position */
+  background-size: cover; /* Ensure the background covers the entire container */
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+  align-items: center; /* Center items vertically */
+  padding: 20px;
+  min-height: 50vh; /* Ensure a minimum height for better appearance */
+  box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.3); /* Add depth with an inner shadow */
+  border-radius: 12px; /* Smooth edges for the container */
+}
+
+/* Painting Images */
+.painting-container img, .painting-image {
+  width: 200px;
+  height: 200px;
+  object-fit: cover; /* Maintain aspect ratio while covering the dimensions */
+  border-radius: 12px; /* Slightly rounded edges */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Slightly deeper shadow for better effect */
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition on hover */
+}
+
+.painting-container img:hover, .painting-image:hover {
+  transform: scale(2.1); /* Enlarge slightly on hover */
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4); /* Intensify shadow on hover */
+  cursor: pointer; /* Indicate interactivity */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .painting-container, .gallery-container {
+    gap: 15px; /* Reduce gaps for smaller screens */
+    padding: 15px; /* Adjust padding */
+  }
+
+  .painting-container img, .painting-image {
+    width: 200px; /* Adjust image size */
+    height: 200px;
+  }
+}
+
+@media (max-width: 480px) {
+  .painting-container img, .painting-image {
+    width: 100%; /* Full width for very small screens */
+    max-width: 300px; /* Prevent excessive scaling */
+    height: auto; /* Maintain aspect ratio */
+  }
+}
+
+
+/* Gallery Card Layout */
+.painting-card, .painting-item {
+  border: 1px solid #ccc;
+  padding: 15px;
+  border-radius: 10px;
+  background-color: #f9f9f9;
+  text-align: center;
+}
+
+.painting-card h2, .painting-item h2 {
+  font-size: 1.5em;
+  margin-bottom: 10px;
+}
+
+.painting-card p {
+  margin: 5px 0;
+}
+
+.painting-card button {
+  background-color: #4CAF50;
+  color: white;
+  padding: 10px;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.painting-card button:hover {
+  background-color: #45a049;
+}
+
+/* Bakhtiar image */
+.bakhtiar {
+  max-width: 30%;
+  height: auto;
+  border-radius: 8px;
+  margin-top: 20px;
+  margin-bottom: 2cm;
+}
+
+.shape {
+  width: 100%; /* Full width of the container */
+  height: 113.4px; /* 3 cm (1 cm = ~37.8 pixels) */
+  object-fit: cover; /* Ensures the image scales properly */
+  display: block; /* Removes any extra space below the image */
+}
+
+
+/* Feedback and Contact Form Styling */
+.feedback-container {
+  padding: 30px;
+  background-image: url('/assets/feedback1.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  color: white;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+.contact-artist {
+  padding: 40px;
+  background-image: url('/assets/watercolor2.avif');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  border-radius: 16px;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+  color: #ffffff;
+  max-width: 800px;
+  margin: 20px auto;
+  font-family: 'Roboto', sans-serif;
+  text-align: center;
+}
+
+.contact-artist h1 {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+  color: #ffffff;
+  text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.7);
+}
+
+.contact-artist p {
+  background-color: #2f7be4;
+  width: 15cm;
+  font-size: 1.2rem;
+  margin-bottom: 20px;
+  color:#f4f4f7;
+}
+
+.form-container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  text-align: left;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group label {
+  margin-bottom: 8px;
+  font-size: 1rem;
+  font-weight: bold;
+  color: #007bff;
+}
+
+.form-group input,
+.form-group textarea {
+  padding: 12px;
+  border: none;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.8);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  font-size: 1rem;
+  color: #333;
+  outline: none;
+  transition: all 0.3s ease;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  background: #ffffff;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.form-group textarea {
+  min-height: 120px;
+}
+
+.submit-button {
+  padding: 15px;
+  background-color: #ff7f50;
+  color: #ffffff;
+  border: none;
+  border-radius: 8px;
+  font-size: 1.1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.submit-button:hover {
+  background-color: #ff6347;
+  transform: scale(1.05);
+}
+
+.success-message {
+  margin-top: 20px;
+  background-color: rgba(0, 255, 127, 0.9);
+  color: #ffffff;
+  padding: 15px;
+  border-radius: 8px;
+  font-weight: bold;
+}
+
+
+.feedback-container h2 {
+  font-size: 2rem;
+  text-align: center;
+  margin-bottom: 25px;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.feedback-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.feedback-form .form-group {
+  width: 70%;
+  max-width: 700px;
+  margin-bottom: 20px;
+}
+
+.feedback-form input,
+.feedback-form textarea {
+  width: 100%;
+  padding: 12px;
+  margin-top: 8px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-size: 1rem;
+  color: #333;
+  background-color: rgba(255, 255, 255, 0.8);
+  transition: border-color 0.3s ease-in-out;
+}
+
+.feedback-form input:focus, .feedback-form textarea:focus {
+  border-color: #007bff;
+  outline: none;
+}
+
+.feedback-form button {
+  padding: 12px 30px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  width: 100%;
+  max-width: 220px;
+}
+
+.feedback-form button:hover {
+  background-color: #0056b3;
+}
+
+/* Footer */
+.footer p {
+  margin: 5px 0;
+}
+
+/* Cart Section */
 .cart-container {
   padding: 20px;
-  background-color: #d3d921; /* Background for the entire container */
   font-family: Arial, sans-serif;
   display: flex;
-  flex-direction: column; /* Stack the items vertically */
-  align-items: flex-start; /* Align items to the left */
-  border-radius: 8px; /* Optional: to round the corners of the container */
-}
-/* h1 styles */
-.cart-container h1 {
-  margin-bottom: 15px; /* Adds space below the h1 */
-  font-size: 2rem; /* Customize font size */
-  color: #333; /* Change color if needed */
-  text-align: left; /* Align the title to the left */
+  flex-direction: column;
+  align-items: flex-start;
+  border-radius: 8px;
 }
 
-/* p styles */
+.cart-container h1 {
+  margin-bottom: 15px;
+  font-size: 2rem;
+  color: #333;
+}
+
 .cart-container p {
-  margin-top: 10px; /* Adds space above the p */
-  font-size: 1.2rem; /* Customize font size */
-  color: #555; /* Change color for the text */
-  text-align: left; /* Align the paragraph text to the left */
+  margin-top: 10px;
+  font-size: 1.2rem;
+  color: #555;
 }
 
 .cart-link {
   display: flex;
   align-items: center;
-  text-decoration: none; /* Remove underline */
+  text-decoration: none;
   color: white;
   font-weight: bold;
 }
@@ -86,20 +536,24 @@
 }
 
 .cart-icon {
-  font-size: 24px;
+  height: 37.8px; /* 1 cm */
+  width: 37.8px;  /* 1 cm */
   margin-right: 5px;
+  vertical-align: middle;
 }
 
 .cart-count {
-  background-color: #f44336; /* Red color for cart count */
+  background-color: #f44336;
   color: white;
-  padding: 2px 8px;
   border-radius: 50%;
+  padding: 5px 10px;
   font-size: 14px;
-  font-weight: bold;
+  position: relative;
+  top: -10px; /* Align the count number with the cart icon */
 }
 
-/* Cart table styles */
+
+/* Cart Table */
 .cart-table {
   width: 100%;
   border-collapse: collapse;
@@ -121,11 +575,11 @@
   color: #555;
 }
 
-/* Button styles */
+/* Button Styles */
 button {
   padding: 6px 12px;
   border: none;
-  background-color: #f44336;
+  background-color: #50b968;
   color: white;
   border-radius: 5px;
   cursor: pointer;
@@ -133,235 +587,22 @@ button {
 }
 
 button:hover {
-  background-color: #d32f2f;
+  background-color: #519549;
 }
 
-/* Total price section */
-.total-price {
-  text-align: right;
-  font-size: 1.2rem;
-  margin-top: 20px;
-}
-
-/* Payment methods */
-.payment-methods {
-  margin-top: 20px;
-  text-align: center;
-}
-
-select {
-  padding: 8px 12px;
-  font-size: 1rem;
-  margin-top: 5px;
-}
-
-/* Proceed button section */
-.proceed-button {
-  text-align: center;
-  margin-top: 20px;
-}
-
-.proceed-button button {
-  background-color: #28a745;
-}
-
-.proceed-button button:hover {
-  background-color: #884321;
-}
-
-/* Main content styles */
-.main-content {
-  background-color: #f9f9f9; /* Light background color for content area */
-  padding: 20px; /* Padding around the content */
-  margin: 20px auto; /* Margin for top and bottom; center horizontally */
-  border-radius: 8px; /* Rounded corners */
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
-  max-width: 1200px; /* Maximum width of the content */
-  text-align: center; /* Center-align text */
-}
-
-/* Bakhtiar image styling */
-.bakhtiar {
-  max-width: 40%; /* Make sure the image doesn't overflow */
-  height: auto; /* Maintain aspect ratio */
-  border-radius: 8px; /* Optional: round the image corners */
-  margin-top: 20px; /* Space above the image */
-  margin-bottom: 2cm; /* 2 cm space below the bakhtiar image */
-}
-
-/* Gallery styles */
-.painting-container {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 20px;
-  justify-content: center;
-  margin-top: 30px;
-}
-
-.painting-container img {
-  width: 250px;
-  height: 250px;
-  object-fit: cover; /* Ensures the image fits within the given space */
-  border-radius: 8px; /* Round the corners of the images */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
-  transition: transform 0.3s ease; /* Add smooth hover effect */
-}
-
-.painting-container img:hover {
-  transform: scale(1.05); /* Zoom effect on hover */
-}
-
-/* Shape image styles */
-.shape {
-  margin-top: 40px;
-  max-width: 100%;
-  height: auto;
-}
-
-/* h1 styles */
-.main-content h1 {
-  font-size: 2.5rem;
-  color: #333;
-  margin-bottom: 20px;
-  font-weight: bold;
-}
-
-.main-content p {
-  font-size: 1.2rem;
-  color: #555;
-  margin-bottom: 40px;
-}
-
-
-/* Gallery styles */
-.gallery-container {
-  padding: 20px;
-}
-
-.paintings-list {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-  gap: 20px;
-}
-
-.painting-card {
-  border: 1px solid #ccc;
-  padding: 15px;
-  border-radius: 10px;
-  background-color: #f9f9f9;
-  text-align: center;
-}
-
-.painting-card h2 {
+/* CSS for the star rating */
+.star {
   font-size: 1.5em;
-  margin-bottom: 10px;
-}
-
-.painting-card p {
-  margin: 5px 0;
-}
-
-.painting-image {
-  width: 70%;
-  height: auto;
-  border-radius: 8px;
-  max-height: 300px; /* Adjust max height for uniformity */
-  object-fit: cover; /* Keeps aspect ratio intact */
-  margin-bottom: 15px;
-}
-
-.painting-card button {
-  background-color: #4CAF50;
-  color: white;
-  padding: 10px;
-  border: none;
+  color: #d3d3d3; /* Light gray for empty stars */
   cursor: pointer;
-  border-radius: 5px;
 }
 
-.painting-card button:hover {
-  background-color: #45a049;
+.star.filled {
+  color: #ffcc00; /* Yellow for filled stars */
 }
 
-/* Selected painting section */
-.selected-painting {
-  margin-top: 30px;
-  background-color: #e0f7fa;
-  padding: 15px;
-  border-radius: 5px;
-  border: 1px solid #00bcd4;
-}
-
-.selected-painting h2 {
-  font-size: 1.5em;
-}
-
-.selected-painting p {
-  font-size: 1.1em;
-}
-
-.star-rating {
-  color: gold;
-}
-
-/* Footer styles */
-.footer {
-  background-color: #040505; /* Dark background */
-  color: white; /* Change text color to white */
-  padding: 20px; /* Padding around the footer */
-  text-align: center; /* Center-align text */
-  position: relative; /* To position footer properly */
-  bottom: 0; /* Ensure the footer stays at the bottom */
-  width: 100%; /* Full width */
-}
-
-.footer a {
-  color: #007bff; /* Link color */
-  text-decoration: none; /* Remove underline */
-}
-
-.footer a:hover {
-  text-decoration: underline; /* Underline on hover */
-}
-
-/* Optional: Add styles specifically for copyright text */
-.footer p {
-  margin: 5px 0; /* Space between paragraphs */
-}
-
-.contact-artist {
-  padding: 20px;
-}
-
-.form-container {
+.rating {
   display: flex;
-  flex-direction: column;
-  max-width: 600px;
-  margin: 0 auto;
-}
-
-.form-group {
-  margin-bottom: 15px;
-}
-
-label {
-  font-weight: bold;
-}
-
-input,
-textarea {
-  width: 100%;
-  padding: 8px;
-  margin-top: 5px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-}
-
-textarea {
-  resize: vertical;
-}
-
-button:disabled {
-  background-color: #ccc;
-  cursor: not-allowed;
+  gap: 5px;
+  margin-top: 10px;
 }

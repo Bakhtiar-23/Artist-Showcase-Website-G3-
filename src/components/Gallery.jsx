@@ -33,13 +33,37 @@ const paintings = [
     rating: 3,
     image: "/assets/painting2.jpg",
   },
+  // Add more paintings as needed
 ];
 
 const Gallery = () => {
   const { addToCart } = useCart();
+  const [ratings, setRatings] = useState(paintings.reduce((acc, painting) => {
+    acc[painting.id] = painting.rating; // Initialize with current ratings
+    return acc;
+  }, {}));
 
   const handleBuyClick = (painting) => {
     addToCart(painting); // Add the painting to the cart
+  };
+
+  const handleRatingChange = (paintingId, rating) => {
+    setRatings({
+      ...ratings,
+      [paintingId]: rating,
+    });
+  };
+
+  const renderStars = (rating, paintingId) => {
+    return [1, 2, 3, 4, 5].map((star) => (
+      <span
+        key={star}
+        className={`star ${star <= rating ? 'filled' : ''}`}
+        onClick={() => handleRatingChange(paintingId, star)}
+      >
+        &#9733;
+      </span>
+    ));
   };
 
   return (
@@ -54,6 +78,9 @@ const Gallery = () => {
             <p><strong>Price:</strong> {painting.price}</p>
             <p><strong>Category:</strong> {painting.category}</p>
             <p><strong>Style:</strong> {painting.style}</p>
+            <div className="rating">
+              {renderStars(ratings[painting.id], painting.id)}
+            </div>
             <button className="buy-button" onClick={() => handleBuyClick(painting)}>Buy</button>
           </div>
         ))}
