@@ -3,38 +3,43 @@ import React, { useState } from 'react';
 import { useCart } from '../contexts/CartContext';
 
 const paintings = [
-  {
-    id: 1,
-    name: "Sunset Over the Ocean",
-    size: "30x50 cm",
-    price: "$500",
-    category: "Landscape",
-    style: "Impressionism",
-    rating: 4,
-    image: "/assets/painting5.jpg",
-  },
-  {
-    id: 2,
-    name: "Morning Tea at the Hotel Garden",
-    size: "50x30 cm",
-    price: "$750",
-    category: "Impressionism",
-    style: "Modern",
-    rating: 5,
-    image: "/assets/painting3.jpg",
-  },
-  {
-    id: 3,
-    name: "Old Church in Ussikaupunki-Finland",
-    size: "50x30 cm",
-    price: "$300",
-    category: "Nature",
-    style: "Realism",
-    rating: 3,
-    image: "/assets/painting2.jpg",
-  },
-  // Add more paintings as needed
-];
+    {
+      id: 1,
+      name: "The Stone Breakers",
+      size: "65x102 inches",
+      price: "$800",
+      style: "Realism",
+      category: "Labor Scene",
+      imageUrl: "/assets/stone-breakers.jpg"
+    },
+    {
+      id: 2,
+      name: "A Burial at Ornans",
+      size: "124x263 inches",
+      price: "$1200",
+      style: "Realism",
+      category: "Historical",
+      imageUrl: "/assets/burial-at-ornans.jpg"
+    },
+    {
+      id: 3,
+      name: "The Wave",
+      size: "38x46 inches",
+      price: "$600",
+      style: "Realism",
+      category: "Seascape",
+      imageUrl: "/assets/the-wave.jpg"
+    },
+    {
+      id: 4,
+      name: "The Desperate Man",
+      size: "18x22 inches",
+      price: "$700",
+      style: "Realism",
+      category: "Portrait",
+      imageUrl: "/assets/desperate-man.jpg"
+    },
+  ]
 
 const Gallery = () => {
   const { addToCart } = useCart();

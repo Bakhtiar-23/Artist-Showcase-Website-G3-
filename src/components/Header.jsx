@@ -15,9 +15,7 @@ const Header = () => {
       <div className="header-content">
         {/* Logo on the left */}
         <img src="/assets/logo.png" alt="Logo" className="logo" />
-
-        {/* Your name as an image in the middle */}
-        <img src="/assets/Bakhi-name.png" alt="Bakhi-name" className="bakhi-name" />
+        <h1> Artist ShowCases Website</h1>
 
         {/* Navigation Menu */}
       <nav>

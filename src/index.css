@@ -365,11 +365,11 @@ nav {
 }
 
 .contact-artist p {
-  background-color: #2f7be4;
+  background-color: #aaeb68;
   width: 15cm;
   font-size: 1.2rem;
   margin-bottom: 20px;
-  color:#f4f4f7;
+  color:#f5f7f4;
 }
 
 .form-container {
@@ -579,7 +579,7 @@ nav {
 button {
   padding: 6px 12px;
   border: none;
-  background-color: #50b968;
+  background-color: #28a745;
   color: white;
   border-radius: 5px;
   cursor: pointer;

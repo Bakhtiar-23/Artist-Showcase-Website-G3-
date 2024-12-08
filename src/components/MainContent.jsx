@@ -21,41 +21,42 @@ const MainContent = () => {
   const paintings = [
     {
       id: 1,
-      name: 'Sunset Serenity',
-      size: '24x36 inches',
-      price: '$500',
-      style: 'Impressionism',
-      category: 'Landscape',
-      imageUrl: '/public/assets/painting1.jpg',
+      name: "The Stone Breakers",
+      size: "65x102 inches",
+      price: "$800",
+      style: "Realism",
+      category: "Labor Scene",
+      imageUrl: "/assets/stone-breakers.jpg"
     },
     {
       id: 2,
-      name: 'Abstract Waves',
-      size: '30x40 inches',
-      price: '$750',
-      style: 'Abstract',
-      category: 'Modern Art',
-      imageUrl: '/public/assets/painting2.jpg',
+      name: "A Burial at Ornans",
+      size: "124x263 inches",
+      price: "$1200",
+      style: "Realism",
+      category: "Historical",
+      imageUrl: "/assets/burial-at-ornans.jpg"
     },
     {
       id: 3,
-      name: 'Majestic Mountain',
-      size: '36x48 inches',
-      price: '$900',
-      style: 'Realism',
-      category: 'Nature',
-      imageUrl: '/public/assets/painting3.jpg',
+      name: "The Wave",
+      size: "38x46 inches",
+      price: "$600",
+      style: "Realism",
+      category: "Seascape",
+      imageUrl: "/assets/the-wave.jpg"
     },
     {
       id: 4,
-      name: 'Golden Horizon',
-      size: '48x60 inches',
-      price: '$1200',
-      style: 'Contemporary',
-      category: 'Abstract',
-      imageUrl: '/public/assets/painting5.jpg',
+      name: "The Desperate Man",
+      size: "18x22 inches",
+      price: "$700",
+      style: "Realism",
+      category: "Portrait",
+      imageUrl: "/assets/desperate-man.jpg"
     },
-  ];
+  ]
+  
 
   // Handle feedback form submission
   const handleSubmit = (e) => {
@@ -94,10 +95,10 @@ const MainContent = () => {
     <main className="main-content">
       <h1>WELCOME TO MY OFFICIAL ART WEB-PAGE</h1>
       <section className="about">
-        <img src="/public/assets/Bakhtiar1.png" alt="Bakhtiar" className="bakhtiar" />
+        <img src="/public/assets/artist1.jpg" alt="Bakhtiar" className="bakhtiar" />
         <h1>About Me</h1>
         <h2>
-          Hello, I'm Bakhtiar, a realistic artist with a passion for painting that started 
+          Hello, I'm Gustave , a realistic artist with a passion for painting that started 
           in childhood. With three exhibitions to my name, I specialize in oil painting on canvas, 
           using various techniques to create depth and texture. My work captures the beauty of the 
           world around me, blending technical precision with personal expression. I’m constantly 
