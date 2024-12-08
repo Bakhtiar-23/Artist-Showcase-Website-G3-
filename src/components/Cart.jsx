@@ -1,4 +1,4 @@
-// src/components/Cart.jsx
+//src/components/Cart.jsx
 import React, { useState } from 'react';
 import { useCart } from '../contexts/CartContext';
 

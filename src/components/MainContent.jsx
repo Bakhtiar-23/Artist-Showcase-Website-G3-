@@ -1,3 +1,5 @@
+//src/components/MainContent.jsx
+
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useCart } from '../contexts/CartContext';
@@ -86,18 +88,20 @@ const MainContent = () => {
   };
 
   const handleLogin = async () => {
+    console.log('Attempting login with:', { username, password }); // Debug log
+  
     try {
       const response = await fetch('http://localhost:5000/api/auth/login', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ username, password }),
       });
-
+  
       if (response.ok) {
         const data = await response.json();
+        console.log('Login successful:', data); // Debug log
         setIsLoggedIn(true);
-        localStorage.setItem('token', data.token); // Save the token locally
-        console.log('Login successful');
+        localStorage.setItem('token', data.token); // Save token locally
         alert('Login successful!');
       } else {
         const error = await response.json();
@@ -109,7 +113,7 @@ const MainContent = () => {
       alert('An error occurred during login.');
     }
   };
-
+  
   const handleLogout = () => {
     setIsLoggedIn(false);
     localStorage.removeItem('token'); // Clear the token on logout

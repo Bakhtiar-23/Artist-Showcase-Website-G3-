@@ -1,4 +1,4 @@
-// routes/auth.js
+//back-end/routes/auth.js
 const express = require('express');
 const jwt = require('jsonwebtoken');
 const User = require('../models/Users.js');
@@ -20,6 +20,7 @@ router.post('/register', async (req, res) => {
     const newUser = new User({ username, password: hashedPassword });
     await newUser.save();
 
+
     res.status(201).json({ message: 'User registered successfully' });
   } catch (error) {
     console.error('Error registering user:', error);
@@ -31,13 +32,14 @@ router.post('/register', async (req, res) => {
 router.post('/login', async (req, res) => {
   const { username, password } = req.body;
 
+
   try {
     const user = await User.findOne({ username });
     if (!user) {
       return res.status(400).json({ message: 'Invalid username or password' });
     }
-
     const isMatch = await bcrypt.compare(password, user.password);
+
     if (!isMatch) {
       return res.status(400).json({ message: 'Invalid username or password' });
     }

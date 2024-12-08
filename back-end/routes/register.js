@@ -1,3 +1,5 @@
+//back-end/routes/register.js
+
 import express from 'express';
 import bcrypt from 'bcrypt';
 import User from '../models/User.js';
@@ -5,6 +7,7 @@ import User from '../models/User.js';
 const router = express.Router();
 
 router.post('/register', async (req, res) => {
+  console.error('req')
   const { username, password } = req.body;
 
   try {

@@ -1,3 +1,5 @@
+//src/components/Header.jsx
+
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { useCart } from '../contexts/CartContext'; // Import the CartContext to access cart items

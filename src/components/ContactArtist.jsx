@@ -1,3 +1,5 @@
+//src/components/ContactArtist.jsx
+
 import React, { useState } from 'react';
 
 const ContactArtist = () => {
