@@ -27,7 +27,7 @@ const MainContent = () => {
       price: '$500',
       style: 'Impressionism',
       category: 'Landscape',
-      imageUrl: '/public/assets/painting1.jpg',
+      imageUrl: '/assets/painting1.jpg',
     },
     {
       id: 2,
@@ -36,7 +36,7 @@ const MainContent = () => {
       price: '$750',
       style: 'Abstract',
       category: 'Modern Art',
-      imageUrl: '/public/assets/painting2.jpg',
+      imageUrl: '/assets/painting2.jpg',
     },
     {
       id: 3,
@@ -45,7 +45,7 @@ const MainContent = () => {
       price: '$900',
       style: 'Realism',
       category: 'Nature',
-      imageUrl: '/public/assets/painting3.jpg',
+      imageUrl: '/assets/painting3.jpg',
     },
     {
       id: 4,
@@ -54,7 +54,7 @@ const MainContent = () => {
       price: '$1200',
       style: 'Contemporary',
       category: 'Abstract',
-      imageUrl: '/public/assets/painting5.jpg',
+      imageUrl: '/assets/painting4.jpg',
     },
   ];
 
@@ -164,10 +164,10 @@ const MainContent = () => {
 
       <h1>WELCOME TO MY OFFICIAL ART WEB-PAGE</h1>
       <section className="about">
-        <img src="/public/assets/Bakhtiar1.png" alt="Bakhtiar" className="bakhtiar" />
+        <img src="/assets/profile.png" alt="Bakhtiar" className="bakhtiar" />
         <h1>About Me</h1>
         <h2>
-          Hello, I'm Bakhtiar, a realistic artist with a passion for painting that started
+          Hello, I'm Artist, a realistic artist with a passion for painting that started
           in childhood. With three exhibitions to my name, I specialize in oil painting on canvas,
           using various techniques to create depth and texture. My work captures the beauty of the
           world around me, blending technical precision with personal expression.

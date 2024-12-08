@@ -11,7 +11,7 @@ const paintings = [
     category: "Landscape",
     style: "Impressionism",
     rating: 4,
-    image: "/assets/painting5.jpg",
+    image: "/assets/painting1.jpg",
   },
   {
     id: 2,
@@ -21,7 +21,7 @@ const paintings = [
     category: "Impressionism",
     style: "Modern",
     rating: 5,
-    image: "/assets/painting3.jpg",
+    image: "/assets/painting2.jpg",
   },
   {
     id: 3,
@@ -31,8 +31,9 @@ const paintings = [
     category: "Nature",
     style: "Realism",
     rating: 3,
-    image: "/assets/painting2.jpg",
+    image: "/assets/painting3.jpg",
   },
+  
   // Add more paintings as needed
 ];
 

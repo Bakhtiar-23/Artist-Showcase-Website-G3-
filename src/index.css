@@ -28,7 +28,7 @@ html, body {
 
 /* Header Styling */
 .header {
-  background-color: #030303; /* Unified dark background */
+  background-color: #530d42; /* Unified dark background */
   color: white;
   height: 3cm;
   padding: 20px;
@@ -41,7 +41,7 @@ html, body {
 
 /* Footer Styling */
 .footer {
-  background-color: #030303; /* Same dark background as header */
+  background-color: #530d42; /* Same dark background as header */
   color: white;
   height: 3cm;
   padding: 20px;
@@ -88,7 +88,7 @@ html, body {
   margin-right: 20px;
 }
 
-.login-button {
+.login-button, .register-button {
   background-color: #007bff;
   color: white;
   padding: 10px 20px;
@@ -98,7 +98,7 @@ html, body {
   font-size: 16px;
 }
 
-.login-button:hover {
+.login-button:hover, .register-button:hover {
   background-color: #0056b3;
 }
 

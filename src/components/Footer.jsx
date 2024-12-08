@@ -15,12 +15,12 @@ const Footer = () => {
       <button onClick={handleButtonClick} className="order-paintings">
         Order Paintings
       </button>
-      <p>&copy; {new Date().getFullYear()} Bakhtiar Ismail. All rights reserved.</p>
+      <p>&copy; {new Date().getFullYear()} Artist All rights reserved.</p>
       <p>
-        Email: <a href="mailto:bakhtiar.khider@gmail.com">bakhtiar.khider@gmail.com</a>
+        Email: <a href="Artist-Official@gmail.com">test@gmail.com</a>
       </p>
       <p>
-        Phone: <a href="tel:0409326961">0409326961</a>
+        Phone: <a href="tel:12345678">12345678</a>
       </p>
       
     </footer>
