@@ -19,7 +19,7 @@ const Header = () => {
         <img src="/assets/logo.png" alt="Logo" className="logo" />
 
         {/* Your name as an image in the middle */}
-        <img src="/assets/Bakhi-name.png" alt="Bakhi-name" className="bakhi-name" />
+        <img src="/assets/imageOfName.png" alt="Bakhi-name" className="bakhi-name" />
 
         {/* Navigation Menu */}
       <nav>
