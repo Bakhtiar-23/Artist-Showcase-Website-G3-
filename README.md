@@ -38,6 +38,8 @@ The design of the Artist Showcase Web will prioritize:
 - **Responsive Design**: The layout will adapt to various screen sizes, providing a seamless experience on mobile and desktop devices.
 - **Intuitive Navigation**: Clear and straightforward navigation to help users find information quickly.
 
+
+
 ## Getting Started
 
 To get started with the project, clone the repository and install the necessary dependencies:
@@ -46,4 +48,12 @@ To get started with the project, clone the repository and install the necessary 
 git clone https://github.com/Bakhtiar-23/Artist-Showcase-Website-G3-.git
 cd Artist-Showcase-Website-G3-
 npm install
+npm run dev
+```
+
+## Starting back-end server
+```bash
+cd back-end
+node.server.js
+
 
