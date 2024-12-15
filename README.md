@@ -52,8 +52,18 @@ npm run dev
 ```
 
 ## Starting back-end server
+
+### 1. To get started using log-in, log-out function, request join the project MongoDB website.
+
+### 2. Open a new terminal:
+   - On **Windows**: Use the terminal in your code editor (e.g., VS Code), or open Command Prompt, PowerShell, or Git Bash.
+   - On **Mac/Linux**: Open the terminal application or use a terminal integrated into your editor.
+   
 ```bash
 cd back-end
 node.server.js
+```
+
+
 
 
