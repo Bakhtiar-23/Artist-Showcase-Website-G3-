@@ -1,4 +1,4 @@
-//src/components/MainContent.jsx
+// src/components/MainContent.jsx
 
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
@@ -18,6 +18,11 @@ const MainContent = () => {
     3: 3,
     4: 4,
   });
+
+  const [name, setName] = useState('');
+  const [email, setEmail] = useState('');
+  const [feedback, setFeedback] = useState('');
+  const [feedbacks, setFeedbacks] = useState([]);
 
   const paintings = [
     {
@@ -127,6 +132,16 @@ const MainContent = () => {
     }));
   };
 
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    const newFeedback = { name, email, feedback };
+    setFeedbacks((prevFeedbacks) => [...prevFeedbacks, newFeedback]);
+    setName('');
+    setEmail('');
+    setFeedback('');
+    alert('Feedback submitted successfully!');
+  };
+
   const sortedPaintings = [...paintings].sort((a, b) => ratings[b.id] - ratings[a.id]);
 
   return (
@@ -213,6 +228,55 @@ const MainContent = () => {
             </div>
           </div>
         ))}
+      </div>
+
+      {/* Feedback Section */}
+      <div className="feedback-container">
+        <h2>Leave your feedback!</h2>
+        <form onSubmit={handleSubmit} className="feedback-form">
+          <div className="form-group">
+            <label htmlFor="name">Name:</label>
+            <input
+              type="text"
+              id="name"
+              value={name}
+              onChange={(e) => setName(e.target.value)}
+              placeholder="Enter your name"
+            />
+          </div>
+          <div className="form-group">
+            <label htmlFor="email">Email:</label>
+            <input
+              type="email"
+              id="email"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              placeholder="Enter your email"
+            />
+          </div>
+          <div className="form-group">
+            <label htmlFor="feedback">Feedback:</label>
+            <textarea
+              id="feedback"
+              value={feedback}
+              onChange={(e) => setFeedback(e.target.value)}
+              placeholder="Enter your feedback"
+            />
+          </div>
+          <button type="submit">Submit Feedback</button>
+        </form>
+
+        <div className="feedback-list">
+          <h3>Latest Feedbacks</h3>
+          <ul>
+            {feedbacks.map((item, index) => (
+              <li key={index}>
+                <strong>{item.name} ({item.email}):</strong>
+                <p>{item.feedback}</p>
+              </li>
+            ))}
+          </ul>
+        </div>
       </div>
     </main>
   );
