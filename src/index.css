@@ -402,7 +402,7 @@ nav {
   margin-bottom: 8px;
   font-size: 1rem;
   font-weight: bold;
-  color: #007bff;
+  color: #000000;
 }
 
 .form-group input,
@@ -461,6 +461,7 @@ nav {
   margin-bottom: 25px;
   font-weight: bold;
   text-transform: uppercase;
+  color: #333;
 }
 
 .feedback-form {
@@ -473,6 +474,7 @@ nav {
   width: 70%;
   max-width: 700px;
   margin-bottom: 20px;
+  
 }
 
 .feedback-form input,
@@ -489,13 +491,13 @@ nav {
 }
 
 .feedback-form input:focus, .feedback-form textarea:focus {
-  border-color: #007bff;
+  border-color: #b59f84;
   outline: none;
 }
 
 .feedback-form button {
   padding: 12px 30px;
-  background-color: #007bff;
+  background-color: #b59f84;
   color: white;
   border: none;
   border-radius: 8px;
@@ -507,7 +509,7 @@ nav {
 }
 
 .feedback-form button:hover {
-  background-color: #0056b3;
+  background-color: #907f69;
 }
 
 /* Footer */
